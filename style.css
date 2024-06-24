@@ -44,9 +44,148 @@ h1 {
   position: absolute;
   top: 16%;
   left: 5%;
-  width: 25%;
+  width: 30%;
   font-family: monospace;
 }
-span {
+h1 span {
   color: orange;
+}
+.item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.item img:nth-child(1) {
+  width: 150px;
+  position: absolute;
+  top: 16%;
+  left: 70%;
+}
+.item img:nth-child(2) {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(0, -50%);
+}
+.item img:nth-child(3) {
+  width: 150px;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  filter: blur(3px);
+}
+.item img:nth-child(4) {
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  bottom: 10%;
+  left: 40%;
+  filter: blur(17px);
+}
+.content {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  width: 25%;
+  height: 25%;
+  /*overflow: hidden;*/
+  opacity: 0.7;
+}
+.content img {
+  width: 50px !important;
+  left: 0 !important;
+  animation: none !important;
+  bottom: 0 !important;
+}
+.itemText {
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  display: block;
+  margin-top: 10px;
+  min-height: 20px;
+  position: relative;
+}
+.itemText span {
+  float: right;
+  margin-left: 20px;
+  opacity: 0.6;
+  font-family: monospace;
+}
+.active {
+  display: block;
+}
+.active img:nth-child(1) {
+  opacity: 0;
+  animation: img1show 2s cubic-bezier(0, 0, 0, 1.01) 1 forwards;
+}
+.active img:nth-child(2),
+.active img:nth-child(4) {
+  opacity: 0;
+  animation: img2show 2.3s cubic-bezier(0, 0, 0, 1.01) 1 forwards;
+}
+.active img:nth-child(3) {
+  opacity: 0;
+  animation: img3show 2s cubic-bezier(0, 0, 0, 1.01) 1 forwards;
+}
+.active .itemText {
+  animation: showtext 1s ease-in-out 1 forwards;
+}
+@keyframes showtext {
+  0% {
+    opacity: 0;
+    transform: translate(100px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes img1show {
+  0% {
+    opacity: 0;
+    left: 100%;
+    transform: rotate(95deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    left: 70%;
+    transform: rotate(0deg);
+  }
+}
+@keyframes img2show {
+  0% {
+    opacity: 0;
+    left: 100%;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    left: 40%;
+  }
+}
+@keyframes img3show {
+  0% {
+    opacity: 0;
+    left: 130%;
+    transform: rotate(95deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    left: 50%;
+    transform: rotate(0deg);
+  }
 }
